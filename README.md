@@ -12,17 +12,15 @@ sketch can easily be modified to perform some other functions at the specified t
 * any Feather board, e.g. Feather M0 Basic Proto https://www.adafruit.com/product/2772
 
 * DS3231 Precision RTC FeatherWing https://www.adafruit.com/product/3028
-* CR1220 coin cell https://www.adafruit.com/product/380
+  * CR1220 coin cell https://www.adafruit.com/product/380
 
 * Music Maker FeatherWing w/Amp https://www.adafruit.com/product/3436 for speaker wire output
-
- * or https://www.adafruit.com/product/3357 for 1/8" audio jack output
+  * or https://www.adafruit.com/product/3357 for 1/8" audio jack output
 
 * MicroSD card https://www.adafruit.com/product/1294 FAT formatted with "cheer.mp3"
 
 * FeatherWing Tripler https://www.adafruit.com/product/3417 
-
- * or Feather Stacking Headers https://www.adafruit.com/product/2830 for a different form factor 
+  * or Feather Stacking Headers https://www.adafruit.com/product/2830 for a different form factor 
 
 
 
