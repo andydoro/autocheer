@@ -1,8 +1,6 @@
-Autocheer
-================
-
 # AUTOCHEER DEVICE
 ======
+
 code by Andy Doro https://andydoro.com/
 
 using Adafruit Feather hardware
@@ -11,7 +9,7 @@ will play an MP3 at a specified time each day
 sketch can easily be modified to perform some other functions at the specified time, such as operate physical/analog noisemakers
 
 
-HARDWARE
+## HARDWARE
 ------
 * any Feather board, e.g. Feather M0 Basic Proto https://www.adafruit.com/product/2772
 
@@ -19,17 +17,17 @@ HARDWARE
 * CR1220 coin cell https://www.adafruit.com/product/380
 
 * Music Maker FeatherWing w/Amp https://www.adafruit.com/product/3436 for speaker wire output
-or https://www.adafruit.com/product/3357 for 1/8" audio jack output
+..* or https://www.adafruit.com/product/3357 for 1/8" audio jack output
 * MicroSD card https://www.adafruit.com/product/1294 FAT formatted with "cheer.mp3"
 
 * FeatherWing Tripler https://www.adafruit.com/product/3417 
-or Feather Stacking Headers https://www.adafruit.com/product/2830 for a different form factor 
+..* or Feather Stacking Headers https://www.adafruit.com/product/2830 for a different form factor 
 
 
 
-SOFTWARE
+## SOFTWARE
 ------
-libraries
+### libraries
 * VS1053 https://github.com/adafruit/Adafruit_VS1053_Library for Music Maker
 * RCTlib https://github.com/adafruit/RTClib for RTC
 * DST_RTC https://github.com/andydoro/DST_RTC for Daylight Saving Time adjustments
