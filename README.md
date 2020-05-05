@@ -2,7 +2,7 @@
 
 code by [Andy Doro](https://andydoro.com/)
 
-using [Adafruit Feather](https://www.adafruit.com/feather) hardware
+using [Adafruit Feather](https://www.adafruit.com/feather) hardware  
 will play an MP3 at a specified time each day
 
 sketch can easily be modified to perform some other functions at the specified time, such as operate physical/analog noisemakers
@@ -30,5 +30,5 @@ sketch can easily be modified to perform some other functions at the specified t
 * [RCTlib](https://github.com/adafruit/RTClib) for RTC
 * [DST_RTC](https://github.com/andydoro/DST_RTC) for automatic Daylight Saving Time adjustments
 
-cheer.mp3, place on FAT formatted SD card and insert into Music Maker
+cheer.mp3, place on FAT formatted SD card and insert into Music Maker  
 suggestion: http://www.orangefreesounds.com/street-crowd-cheering-and-applauding/
