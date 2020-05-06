@@ -16,8 +16,8 @@
     - DS3231 Precision RTC FeatherWing https://www.adafruit.com/product/3028
     - CR1220 coin cell https://www.adafruit.com/product/380
 
-    - Music Maker FeatherWing w/Amp https://www.adafruit.com/product/3436 for speaker wire output
-    or https://www.adafruit.com/product/3357 for 1/8" audio jack output
+    - Music Maker FeatherWing https://www.adafruit.com/product/3357 for 1/8" audio jack output
+    or Music Maker FeatherWing w/Amp https://www.adafruit.com/product/3436 for speaker wire output 
     - MicroSD card https://www.adafruit.com/product/1294 FAT formatted with "cheer.mp3"
 
     - FeatherWing Tripler https://www.adafruit.com/product/3417 
@@ -116,6 +116,7 @@ DST_RTC dst_rtc; // DST object
 const int PLAYHOUR = 19; // 24 hour time
 const int PLAYMIN = 0;
 
+const int VOLUME = 0; // lower means louder!
 
 
 void setup() {
@@ -141,7 +142,7 @@ void setup() {
 
 
   // Set volume for left, right channels. lower numbers == louder volume!
-  musicPlayer.setVolume(1, 1);
+  musicPlayer.setVolume(VOLUME, VOLUME);
 
   musicPlayer.sineTest(0x44, 1000);    // Make a tone to indicate VS1053 is working
 
@@ -201,7 +202,6 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   // check time
-  // get time
   DateTime theTime = dst_rtc.calculateTime(rtc.now()); // takes into account DST
 
   printTheTime(theTime);
