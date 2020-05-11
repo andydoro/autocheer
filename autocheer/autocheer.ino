@@ -33,6 +33,7 @@
     - DST_RTC https://github.com/andydoro/DST_RTC for Daylight Saving Time adjustments
 
     cheer.mp3, place on FAT formatted SD card and insert into Music Maker
+    http://www.orangefreesounds.com/street-crowd-cheering-and-applauding/
 
 */
 
@@ -110,9 +111,7 @@ DST_RTC dst_rtc; // DST object
 // you'll need to modify the code in the DST_RTC library to make this work properly.
 #define OBSERVE_DST 1
 
-
-//bool alreadyPlaying = false;
-
+// the hour and minute you'd like MP3 to start playing
 const int PLAYHOUR = 19; // 24 hour time
 const int PLAYMIN = 0;
 
@@ -209,10 +208,10 @@ void loop() {
   byte theHour = theTime.hour();
   byte theMinute = theTime.minute();
 
-  //check if the time is right
+  //check whether it's time to play mp3
   if (theHour == PLAYHOUR && theMinute == PLAYMIN) {
 
-    Serial.println(F("Playing full track 001"));
+    Serial.println(F("Playing full track"));
     musicPlayer.playFullFile("/cheer.mp3");
 
   }
