@@ -5,23 +5,23 @@
 
     using Adafruit Feather hardware
     will play an MP3 at a specified time each day
-    
+
     sketch can easily be modified to perform some other functions at the specified time, such as operate physical/analog noisemakers
 
 
     HARDWARE
     ---
     - any Feather board, e.g. Feather M0 Basic Proto https://www.adafruit.com/product/2772
-    
-    - DS3231 Precision RTC FeatherWing https://www.adafruit.com/product/3028
+
+    - Adalogger FeatherWing https://www.adafruit.com/product/2922
     - CR1220 coin cell https://www.adafruit.com/product/380
 
     - Music Maker FeatherWing https://www.adafruit.com/product/3357 for 1/8" audio jack output
-    or Music Maker FeatherWing w/Amp https://www.adafruit.com/product/3436 for speaker wire output 
+    or Music Maker FeatherWing w/Amp https://www.adafruit.com/product/3436 for speaker wire output
     - MicroSD card https://www.adafruit.com/product/1294 FAT formatted with "cheer.mp3"
 
-    - FeatherWing Tripler https://www.adafruit.com/product/3417 
-    or Feather Stacking Headers https://www.adafruit.com/product/2830 for a different form factor 
+    - FeatherWing Tripler https://www.adafruit.com/product/3417
+    or Feather Stacking Headers https://www.adafruit.com/product/2830 for a different form factor
 
 
 
@@ -102,7 +102,8 @@ Adafruit_VS1053_FilePlayer musicPlayer =
   Adafruit_VS1053_FilePlayer(VS1053_RESET, VS1053_CS, VS1053_DCS, VS1053_DREQ, CARDCS);
 
 
-RTC_DS3231 rtc; // RTC object
+//RTC_DS3231 rtc;
+RTC_PCF8523 rtc; // RTC object
 DST_RTC dst_rtc; // DST object
 
 // Do you live in a country or territory that observes Daylight Saving Time?
@@ -181,7 +182,8 @@ void setup() {
     while (1);
   }
 
-  if (rtc.lostPower()) {
+  //if (rtc.lostPower()) {
+  if (! rtc.initialized()) {
     Serial.println("RTC lost power, lets set the time!");
     // following line sets the RTC to the date & time this sketch was compiled
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
