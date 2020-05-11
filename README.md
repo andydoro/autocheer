@@ -14,7 +14,7 @@ sketch can easily be modified to perform some other functions at the specified t
 * [Adalogger FeatherWing](https://www.adafruit.com/product/2922)
   * & [CR1220 coin cell](https://www.adafruit.com/product/380)
 
-* [Adafruit Music Maker FeatherWing](https://www.adafruit.com/product/3357) for 1/8" audio jack output
+* [Adafruit Music Maker FeatherWing](https://www.adafruit.com/product/3357) for 3.5mm (1/8") audio jack output
   * or [Music Maker FeatherWing w/ Amp](https://www.adafruit.com/product/3436) for speaker wire output
 
 * [MicroSD card](https://www.adafruit.com/product/1294) FAT formatted with "cheer.mp3"
