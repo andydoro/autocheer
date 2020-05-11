@@ -11,7 +11,7 @@ sketch can easily be modified to perform some other functions at the specified t
 ## HARDWARE
 * any Feather board, e.g. [Feather M0 Basic Proto](https://www.adafruit.com/product/2772)
 
-* [Adalogger FeatherWing](https://www.adafruit.com/product/2922)
+* [Adalogger FeatherWing](https://www.adafruit.com/product/2922) for PCF8523 RTC
   * & [CR1220 coin cell](https://www.adafruit.com/product/380)
 
 * [Adafruit Music Maker FeatherWing](https://www.adafruit.com/product/3357) for 3.5mm (1/8") audio jack output
