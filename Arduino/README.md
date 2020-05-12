@@ -1,4 +1,5 @@
-# AUTOCHEER DEVICE
+# DAILY CHEER AUTOMATON 
+## AUTOCHEER DEVICE
 
 code by [Andy Doro](https://andydoro.com/)
 

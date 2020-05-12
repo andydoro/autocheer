@@ -5,11 +5,12 @@
 # 
 # uses native CircuitPython mp3 playback
 # should use M4 (or higher)
+#
+# Adalogger https://www.adafruit.com/product/2922
 # 
 # TO DO
 # ---
-# add SD card support
-# Adalogger https://www.adafruit.com/product/2922
+# - add stereo playback
 #
 
 
@@ -58,6 +59,7 @@ days = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 data = open("/sd/cheer.mp3", "rb")
 mp3 = audiomp3.MP3Decoder(data)
 a = audioio.AudioOut(board.A0)
+#a = audioio.AudioOut(board.SPEAKER, right_channel=board.A1)
 
 # selected time
 # 24 hour time
