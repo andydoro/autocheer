@@ -36,7 +36,7 @@ import storage
 
  
 # Use any pin that is not taken by SPI
-SD_CS = board.D10
+SD_CS = board.D10 # for M0 and M4 Feathers
  
 # Connect to the card and mount the filesystem.
 spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
@@ -59,7 +59,7 @@ days = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 data = open("/sd/cheer.mp3", "rb")
 mp3 = audiomp3.MP3Decoder(data)
 #a = audioio.AudioOut(board.A0)
-a = audioio.AudioOut(board.A0, right_channel=board.A1)
+a = audioio.AudioOut(board.A0, right_channel=board.A1) # stereo sound through A0 & A1
 
 # selected time
 # 24 hour time
