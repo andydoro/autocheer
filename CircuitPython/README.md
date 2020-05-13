@@ -9,7 +9,7 @@ will play an MP3 at a specified time each day
 
 ## CircuitPython Version
 
-![Autocheer CircuitPython](https://github.com/andydoro/autocheer/blob/master/CircuitPython/assets/autocheer_circpy.jpg "Autocheer CircuitPython")
+![Autocheer CircuitPython](https://github.com/andydoro/autocheer/blob/master/CircuitPython/assets/autocheer_circpy.jpg "Autocheer CircuitPython, photo by Dano Wall")
 
 
 ### HARDWARE
