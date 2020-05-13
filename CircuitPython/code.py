@@ -4,13 +4,20 @@
 # plays an MP3 at a specific time.
 # 
 # uses native CircuitPython mp3 playback
-# should use M4 (or higher)
 #
+# REQUIREMENTS:
+# should use M4 (or higher)
+# use CircuitPython 5.3.0+
+#
+#
+# HARDWARE:
+# Feather M4 Express https://www.adafruit.com/product/3857
 # Adalogger https://www.adafruit.com/product/2922
 # 
+#
 # TO DO
 # ---
-# - add stereo playback
+# - daylight saving time
 #
 
 import os
@@ -36,7 +43,16 @@ import storage
 
  
 # Use any pin that is not taken by SPI
-SD_CS = board.D10 # for M0 and M4 Feathers
+# For Adalogger FeatherWing: https://learn.adafruit.com/adafruit-adalogger-featherwing/pinouts
+# The SDCS pin is the chip select line: 
+#    On ESP8266, the SD CS pin is on GPIO 15
+#    On ESP32 it's GPIO 33
+#    On WICED it's GPIO PB5
+#    On the nRF52832 it's GPIO 11
+#    On Atmel M0, M4, 328p or 32u4 it's on GPIO 10
+#    On Teensy 3.x it's on GPIO 10
+
+SD_CS = board.D10 # for M0 and M4
  
 # Connect to the card and mount the filesystem.
 spi = io.SPI(board.SCK, board.MOSI, board.MISO)
@@ -92,7 +108,7 @@ days = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 
 data = open("/sd/cheer.mp3", "rb")
 mp3 = audiomp3.MP3Decoder(data)
-#a = audioio.AudioOut(board.A0)
+#a = audioio.AudioOut(board.A0) # mono
 a = audioio.AudioOut(board.A0, right_channel=board.A1) # stereo sound through A0 & A1
 
 # selected time
@@ -105,7 +121,7 @@ playmin = 0
 # no DST adjustment yet!
 if False:  # change to True if you want to set the time!
     #                     year, mon, date, hour, min, sec, wday, yday, isdst
-    t = time.struct_time((2017, 10, 29, 15, 14, 15, 0, -1, -1))
+    t = time.struct_time((2020, 5, 13, 15, 15, 15, 0, -1, -1))
     # you must set year, mon, date, hour, min, sec and weekday
     # yearday is not supported, isdst can be set but we don't do anything with it at this time
     print("Setting time to:", t)  # uncomment for debugging
