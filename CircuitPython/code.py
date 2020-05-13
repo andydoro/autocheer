@@ -39,7 +39,7 @@ import storage
 SD_CS = board.D10 # for M0 and M4 Feathers
  
 # Connect to the card and mount the filesystem.
-spi = busio.SPI(board.SCK, board.MOSI, board.MISO)
+spi = io.SPI(board.SCK, board.MOSI, board.MISO)
 cs = digitalio.DigitalInOut(SD_CS)
 sdcard = adafruit_sdcard.SDCard(spi, cs)
 vfs = storage.VfsFat(sdcard)
