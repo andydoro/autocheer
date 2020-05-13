@@ -9,6 +9,9 @@ will play an MP3 at a specified time each day
 
 ## CircuitPython Version
 
+![alt text](../assets/autocheer_circpy.jpg "Autocheer CircuitPython")
+
+
 ### HARDWARE
 
 * [Feather M4 Express](https://www.adafruit.com/product/3857) is need because it's fast enough to play back MP3 files
