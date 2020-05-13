@@ -6,7 +6,6 @@ code by [Andy Doro](https://andydoro.com/)
 using [Adafruit Feather](https://www.adafruit.com/feather) hardware\
 will play an MP3 at a specified time each day
 
-sketch can easily be modified to perform some other functions at the specified time, such as operate physical/analog noisemakers
 
 ## CircuitPython Version
 
@@ -25,17 +24,21 @@ sketch can easily be modified to perform some other functions at the specified t
 * [Headphone Jack](https://www.adafruit.com/product/1699)
 
 
-
 ### SOFTWARE
+
+requires M4 (ATSAMD51 32-bit Cortex M4 core) or higher and\
+CircuitPython version 5.3.0+
+
 #### LIBRARIES
 
-for RTC:
+from [library bundle version 5.x](https://circuitpython.org/libraries):
+
 * adafruit_bus_device folder
 * adafruit_register folder
 * adafruit_pcf8523.mpy
-
-for SD card:
 * adafruit_sdcard.mpy
+
+#### AUDIO FILE
 
 cheer.mp3, place on FAT formatted SD card and insert into Music Maker\
 suggestion: http://www.orangefreesounds.com/street-crowd-cheering-and-applauding/
