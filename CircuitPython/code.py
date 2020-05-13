@@ -96,20 +96,22 @@ print("====================")
 print_directory("/sd")
 
 
+data = open("/sd/cheer.mp3", "rb")
+mp3 = audiomp3.MP3Decoder(data)
+#a = audioio.AudioOut(board.A0) # mono
+a = audioio.AudioOut(board.A0, right_channel=board.A1) # stereo sound through A0 & A1
+
+
 i2c = io.I2C(board.SCL, board.SDA)  # Change to the appropriate I2C clock & data
 # pins here!
 
 # Create the RTC instance:
 #rtc = adafruit_ds3231.DS3231(i2c)
-rtc = adafruit_pcf8523.PCF8523(myI2C)
+rtc = adafruit_pcf8523.PCF8523(i2c)
 
 # Lookup table for names of days (nicer printing).
 days = ("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
 
-data = open("/sd/cheer.mp3", "rb")
-mp3 = audiomp3.MP3Decoder(data)
-#a = audioio.AudioOut(board.A0) # mono
-a = audioio.AudioOut(board.A0, right_channel=board.A1) # stereo sound through A0 & A1
 
 # selected time
 # 24 hour time
