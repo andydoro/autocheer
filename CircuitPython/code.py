@@ -18,6 +18,7 @@
 # TO DO
 # ---
 # - daylight saving time
+# - use built-in NeoPixel as indicator
 #
 
 import os
@@ -40,6 +41,9 @@ import adafruit_pcf8523
 # SD card
 import adafruit_sdcard
 import storage
+
+# NeoPixel
+#import neopixel
 
  
 # Use any pin that is not taken by SPI
@@ -132,6 +136,10 @@ if False:  # change to True if you want to set the time!
 # pylint: enable-msg=using-constant-test
 # pylint: enable-msg=bad-whitespace
 
+# setup NeoPixel
+#pixel = neopixel.NeoPixel(board.NEOPIXEL, 1)
+
+
 # Main loop:
 while True:
     t = rtc.datetime
@@ -146,11 +154,15 @@ while True:
 
     if t.tm_hour == playhour and t.tm_min == playmin:
         print("it is time!")
+        # turn NeoPixel green
+        #pixel[0] = (0, 255, 0)
         # play the file
         print("playing")
         a.play(mp3)
         while a.playing:
             pass
         print("stopped")
+        # turn NeoPixel off
+        #pixel[0] = (0, 0, 0)
 
     time.sleep(1)  # wait a second
