@@ -52,7 +52,7 @@ import storage
 #    On Atmel M0, M4, 328p or 32u4 it's on GPIO 10
 #    On Teensy 3.x it's on GPIO 10
 
-SD_CS = board.D10 # for M0 and M4
+SD_CS = board.D10 # for M4
  
 # Connect to the card and mount the filesystem.
 spi = io.SPI(board.SCK, board.MOSI, board.MISO)
@@ -135,6 +135,7 @@ if False:  # change to True if you want to set the time!
 # Main loop:
 while True:
     t = rtc.datetime
+
     # print(t)     # uncomment for debugging
     print(
         "The date is {} {}/{}/{}".format(
