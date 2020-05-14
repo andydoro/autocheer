@@ -9,6 +9,9 @@ will play an MP3 at a specified time each day
 
 ## Arduino Version
 
+![Autocheer Arduino](https://github.com/andydoro/autocheer/blob/master/Arduino/assets/autocheer_circpy.jpg "Autocheer Arduino, photo by Andy Doro")
+
+
 ### HARDWARE
 * any Feather board, e.g. [Feather M0 Basic Proto](https://www.adafruit.com/product/2772)
 
