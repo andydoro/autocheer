@@ -9,7 +9,7 @@ will play an MP3 at a specified time each day
 
 ## Arduino Version
 
-![Autocheer Arduino](https://github.com/andydoro/autocheer/blob/master/Arduino/assets/autocheer_circpy.jpg "Autocheer Arduino, photo by Andy Doro")
+![Autocheer Arduino](https://github.com/andydoro/autocheer/blob/master/Arduino/assets/autocheer_arduino.jpg "Autocheer Arduino, photo by Andy Doro")
 
 
 ### HARDWARE
