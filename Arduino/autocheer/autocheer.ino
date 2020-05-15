@@ -50,7 +50,6 @@
 #include "DST_RTC.h" // download from https://github.com/andydoro/DST_RTC
 
 
-
 // These are the pins used
 #define VS1053_RESET   -1     // VS1053 reset pin (not used!)
 
@@ -102,8 +101,8 @@ Adafruit_VS1053_FilePlayer musicPlayer =
   Adafruit_VS1053_FilePlayer(VS1053_RESET, VS1053_CS, VS1053_DCS, VS1053_DREQ, CARDCS);
 
 
-//RTC_DS3231 rtc;
-RTC_PCF8523 rtc; // RTC object
+RTC_DS3231 rtc;
+//RTC_PCF8523 rtc; // RTC object
 DST_RTC dst_rtc; // DST object
 
 // Do you live in a country or territory that observes Daylight Saving Time?
@@ -144,7 +143,7 @@ void setup() {
   // Set volume for left, right channels. lower numbers == louder volume!
   musicPlayer.setVolume(VOLUME, VOLUME);
 
-  musicPlayer.sineTest(0x44, 1000);    // Make a tone to indicate VS1053 is working
+  musicPlayer.sineTest(0x44, 500);    // Make a tone to indicate VS1053 is working
 
   if (!SD.begin(CARDCS)) {
     Serial.println(F("SD failed, or not present"));
@@ -176,12 +175,13 @@ void setup() {
     musicPlayer.startPlayingFile("/track002.mp3");
   */
 
-
+  // start RTC
   if (! rtc.begin()) {
     Serial.println("Couldn't find RTC");
     while (1);
   }
 
+  // set RTC time if needed
   //if (rtc.lostPower()) {
   if (! rtc.initialized()) {
     Serial.println("RTC lost power, lets set the time!");
@@ -203,7 +203,11 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   // check time
-  DateTime theTime = dst_rtc.calculateTime(rtc.now()); // takes into account DST
+  if (OBSERVE_DST == 1) {
+    DateTime theTime = dst_rtc.calculateTime(rtc.now()); // takes into account DST
+  } else {
+    DateTime theTime = rtc.now(); // use if you don't need DST
+  }
 
   printTheTime(theTime);
 
@@ -212,12 +216,9 @@ void loop() {
 
   //check whether it's time to play mp3
   if (theHour == PLAYHOUR && theMinute == PLAYMIN) {
-
     Serial.println(F("Playing full track"));
     musicPlayer.playFullFile("/cheer.mp3");
-
   }
-
 
   // only check every second
   delay(1000);
@@ -225,8 +226,7 @@ void loop() {
 }
 
 
-
-/// File listing helper
+// File listing helper
 void printDirectory(File dir, int numTabs) {
   while (true) {
 
