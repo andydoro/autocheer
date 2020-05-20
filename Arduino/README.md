@@ -3,6 +3,8 @@
 
 code by [Andy Doro](https://andydoro.com/)
 
+[Adafruit Learn Guide: Arduino version](https://learn.adafruit.com/daily-cheer-automaton/arduino-version)
+
 using [Adafruit Feather](https://www.adafruit.com/feather) hardware\
 will play an MP3 at a specified time each day
 
