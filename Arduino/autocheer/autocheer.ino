@@ -103,7 +103,7 @@ Adafruit_VS1053_FilePlayer musicPlayer =
 
 //RTC_DS3231 rtc;
 RTC_PCF8523 rtc; // RTC object
-DST_RTC dst_rtc; // DST object
+DST_RTC dst_rtc(0); // DST object - 0 indicates US DST ruleset
 
 // Do you live in a country or territory that observes Daylight Saving Time?
 // https://en.wikipedia.org/wiki/Daylight_saving_time_by_country
